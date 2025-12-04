@@ -1,4 +1,4 @@
-# Digital Wardrobe — AI-Powered Outfit Builder
+# Digital Wardrobe-AI-Powered Outfit Builder
 
 Welcome to **Digital Wardrobe**, an AI-enhanced clothing management app that lets you upload photos of your clothes, clean them up automatically, and store them in a personalized digital wardrobe.  
 Using CLIP auto-tagging, AI outfit recommendations, and a mannequin preview mode, the app helps you organize your closet and generate fits instantly.
