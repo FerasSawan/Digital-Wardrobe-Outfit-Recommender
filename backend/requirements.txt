@@ -1,0 +1,23 @@
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+sqlalchemy==2.0.36
+pydantic==2.9.2
+python-multipart==0.0.12
+python-dotenv==1.0.1
+psycopg[binary]>=3.2.2
+rembg>=2.0.62
+pillow>=10.4.0
+onnxruntime>=1.18.0
+
+# CLIP for auto-tagging
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.35.0
+open-clip-torch>=2.24.0
+
+# Vector storage for embeddings
+pgvector>=0.2.4
+
+# LLM for outfit recommendations
+openai>=1.0.0
+
