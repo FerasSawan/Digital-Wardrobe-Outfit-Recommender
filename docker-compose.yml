@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: wardrobe_db
+    environment:
+      POSTGRES_USER: wardrobe
+      POSTGRES_PASSWORD: wardrobe
+      POSTGRES_DB: wardrobe
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: wardrobe_backend
+    env_file:
+      - .env.backend  # we'll create this
+    environment:
+      
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/wardrobe_DB
+    depends_on:
+      - db
+    volumes:
+      - ./backend/uploads:/app/uploads
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: wardrobe_frontend
+    depends_on:
+      - backend
+    environment:
+      
+      VITE_API_URL: "http://localhost:8000"
+    ports:
+      - "5173:80"
+
+volumes:
+  db_data:
